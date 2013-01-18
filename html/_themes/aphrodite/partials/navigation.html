@@ -1,0 +1,9 @@
+<div id="navigation" role="navigation">
+
+	<ul>
+		{{ nav max_depth="2" }}
+		<li><a href="{{ url }}" {{ if is_current }} class="you-are-here" {{ endif }}>{{ title }}</a></li>
+		{{ /nav }}
+	</ul>
+
+</div>

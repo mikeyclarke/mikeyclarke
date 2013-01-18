@@ -1,0 +1,12 @@
+// **********
+// IE 6 & lower
+// **********
+
+@import "startsheet.scss";
+
+$mediaqueries: false;
+
+@import "typography.scss";
+@import "layout.scss";
+@import "color.scss";
+

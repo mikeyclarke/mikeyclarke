@@ -1,0 +1,90 @@
+// TYPEOGRAPY --------------------------------------------------------*
+
+$bodyTypeface:				"FS Me Web Regular", serif;
+$bodyHeadingTypeface:		"Skolar SemiBold", sans-serif;
+$bodyHeadingWeight:			normal;
+$bannerHeadingTypeface:		"AvenirNext", Avenir, "HelveticaNeue", Arial, Helvetica, sans-serif;
+$bannerSubheadingTypeface:	"Skolar Regular", serif;
+
+
+.forty-fifth,
+.seventy-fifth {
+	text-decoration: underline;
+	color: red;
+}
+
+body {
+	text-rendering: optimizeLegibility;
+	font-family: $bodyTypeface;
+	
+	// No media queries for IE<9.
+	@if $mediaqueries {
+		font-size: 1em;
+		@media only screen and (min-width: 33.125em) {
+			font-size: 1.15em;
+		}
+		@media only screen and (min-width: 37.5em) {
+			font-size: 1.35em;
+		}
+		@media only screen and (min-width: 50.625em) {
+			font-size: 1.5em;
+		}
+		@media only screen and (min-width: 80.3125em) {
+			font-size: 1.65em;
+		}
+	}
+	@else {
+		font-size: 1.5em;
+	}
+	
+	line-height: 165%;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $bodyHeadingTypeface;
+	font-weight: $bodyHeadingWeight;
+}
+
+h1 {
+	@include text-sizing(2.66666667em, 180%);
+}
+h2 {
+	@include text-sizing(2em, 125%);
+}
+h3 {
+	@include text-sizing(1.5em, 150%);
+}
+
+cite {
+	font-style: normal;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+
+[role=banner] {
+	overflow: auto;
+	h1 {
+		font-family: $bannerHeadingTypeface;
+		font-weight: 300;
+		font-size: 1em;
+		text-transform: lowercase;
+	}
+	h2 {
+		font-size: 2em;
+		line-height: 150%;
+	}
+}
+
+[role=contentinfo] {
+	font-size: 0.75em;
+	line-height: 140%;
+}

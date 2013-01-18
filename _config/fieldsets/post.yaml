@@ -1,0 +1,13 @@
+fields:
+  categories:
+    display: Categories
+    required: false
+    default: 
+    type: tags
+  introduction:
+  	display: Introduction
+  	required: false
+  	default:
+  	type: textarea
+
+hide: true

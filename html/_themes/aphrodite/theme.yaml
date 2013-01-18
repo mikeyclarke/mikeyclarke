@@ -1,0 +1,22 @@
+###########################################################################################
+#
+#  THEME VARIABLES
+#
+###########################################################################################
+
+# Theme name
+theme_name: Aphrodite
+
+# Assets version
+assets_version: 20130117
+
+# Comments + Disqus
+disqus_account: mikeyclarke
+show_comments: no
+
+# Homepage configuration
+home_blog_items: 2
+home_calendar_items: 2
+
+# Global text snippets
+no_results_text: "Sorry, no results found."

@@ -1,0 +1,17 @@
+<h2>{{ title }}</h2>
+<p class="meta-date">{{ datestamp format="F jS, Y" }}</p>
+  
+{{ if introduction }}
+<p class="article-introduction">{{ introduction }}</p>
+{{ endif }}
+  
+{{ content }}
+
+<p class="meta-permalink"><a href="{{ permalink }}">{{ permalink }}</a></p>
+
+{{ if show_comments }}
+<div class="comments">
+  <h3>Leave Your Comments</h3>
+  {{ disqus:comments account="{ disqus_account }" }}
+</div>
+{{ endif }}

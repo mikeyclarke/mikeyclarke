@@ -1,0 +1,13 @@
+{{ entries:listing folder="blog" sort-by="date" }}
+<div role="article">
+<h2>{{ title }}</h2>
+{{ if introduction }}
+	{{ introduction }}
+	<p class="meta-date">Authored {{ datestamp format="F jS, Y" }}</p>
+	<p class="meta-read-link"><a href="{{ permalink }}">Read more</a></p>
+{{ else }}
+	{{ content }}
+	<p class="meta-date">Authored {{ datestamp format="F jS, Y" }}</p>
+{{ endif }}
+</div>
+{{ /entries:listing }}

@@ -1,0 +1,131 @@
+<?php require_once('html/_themes/aphrodite/aphrodite.php'); ?>
+
+{{ if is_staging and !logged_in }}
+	{{ redirect to="{{ _live_url }}" }}
+{{ endif }}
+
+<?php if (!$xhr): ?>
+<!DOCTYPE html>
+<!--[if lte IE 6]> <html lang="en" class="lt-ie8 lt-ie7 lt-ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="lt-ie8"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js"><!--<![endif]-->
+
+<head>
+  
+	<meta charset="utf-8">
+	<?php if ($desktop): ?>
+		<meta id="vp" name="viewport" content="width=980">
+	<?php else: ?>
+		<meta id="vp" name="viewport" content="width=device-width, initial-scale=1.0">
+	<?php endif; ?>
+	
+	<!-- remember the touch icon! -->
+	
+	{{# Title logic #}}
+	{{ if !segment_1 }}
+		<title>{{ _site_name }}</title>
+	{{ elseif segment_2 }}
+		<title>{{ title }}</title>
+	{{ else }}
+		<title>{{title}} ⋆ {{ _site_name }}</title>
+	{{ endif }}
+	<meta name="author" content="Mikey Clarke">
+	<meta name="description" content="{{ if introduction }}{{ introduction }}{{ else }}{{ _site_description }}{{ endif }}">
+	
+	{{ if !seo_visible }}
+		<meta name="robots" content="noindex, nofollow">
+	{{ endif }}
+	
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" href="{{ _site_url }}{{ theme:css src="six.{{ if assets_version }}{{ assets_version }}{{ else }}1{{ endif }}.css" }}" media="all">
+	<![endif]-->
+	
+	<!--[if IE 7 | IE 8]>
+	<link rel="stylesheet" href="{{ _site_url }}{{ theme:css src="seven-eight.{{ if assets_version }}{{ assets_version }}{{ else }}1{{ endif }}.css" }}" media="all">
+	<![endif]-->
+	
+	<!--[if IE 9]>
+	<link rel="stylesheet" href="{{ _site_url }}{{ theme:css src="nine.{{ if assets_version }}{{ assets_version }}{{ else }}1{{ endif }}.css" }}" media="all">
+	<![endif]-->
+	
+	<!--[if gt IE 9]><!-->
+	<link rel="stylesheet" href="{{ _site_url }}{{ theme:css src="neue.{{ if assets_version }}{{ assets_version }}{{ else }}1{{ endif }}.css" }}" media="all">
+	<!--<![endif]-->
+	
+	<noscript>
+		<!-- Loaded conditionally on @font-face support if we have js. -->
+		<link rel="stylesheet" href="//f.fontdeck.com/s/css/sDLal4th9BQH2lvZFncwJ6sQBs4/{{ _site_domain }}/27874.css">
+	</noscript>
+	
+	<meta name="domain" content="{{ _site_domain }}" id="site-domain">
+	
+	{{# Load resources used purely for development here #}}
+	{{ if is_dev }}
+		<script src="{{ _site_url }}{{ theme:js src="dev-ck.{{ if assets_version }}{{ assets_version }}{{ else }}1{{ endif }}.js" }}"></script>
+	{{ endif }}
+	
+	{{ if minify_assets }}
+		<script src="{{ _site_url }}{{ theme:js src="bob-the-builder-min.{{ if assets_version }}{{ assets_version }}{{ else }}1{{ endif }}.js" }}"></script>
+	{{ else }}
+		<script src="{{ _site_url }}{{ theme:js src="modernizr-build.js" }}"></script>
+		<script src="{{ _site_url }}{{ theme:js src="bob-the-builder.{{ if assets_version }}{{ assets_version }}{{ else }}1{{ endif }}.js" }}"></script>
+	{{ endif }}
+	
+	{{# Head assets are page- or post-specific stylesheets or scripts. #}}
+	{{ _page_stylesheets }}
+		<link rel="stylesheet" href="{{ name }}">
+	{{ /_page_stylesheets }}
+	
+	{{ _page_head_scripts }}
+		<script src="{{ name }}"></script>
+	{{ /_page_head_scripts }}
+
+</head>
+
+<body {{ if is_dev }} class="development" {{ endif }} >
+	<div class="container">
+	{{ theme:partial src="header" }}
+	{{ theme:partial src="navigation" }}
+  
+  	<div role="main{{ if _fieldset == post }} article{{ endif }}"{{ if main_classes }} class="{{ main_classes }}{{ name }} {{ /main_classes }}"{{ endif }}>
+<?php endif; ?>
+  		{{ layout_content }}
+<?php if (!$xhr): ?>
+  	</div>
+  	
+  	{{ theme:partial src="footer" }}
+  	</div>
+	{{ if enable_analytics }}
+	<script>
+		var GoSquared = {};
+		GoSquared.acct = "GSN-465607-Y";
+		(function(w){
+		function gs(){
+		  w._gstc_lt = +new Date;
+		  var d = document, g = d.createElement("script");
+		  g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+		  var s = d.getElementsByTagName("script")[0];
+		  s.parentNode.insertBefore(g, s);
+		}
+		w.addEventListener ?
+		  w.addEventListener("load", gs, false) :
+		  w.attachEvent("onload", gs);
+		})(window);
+	</script>
+	{{ endif }}
+	
+	{{ if minify_assets }}
+	<script src="{{ _site_url }}{{ theme:js src="main-min.{{ if assets_version }}{{ assets_version }}{{ else }}1{{ endif }}.js" }}"></script>
+	{{ else }}
+	<script src="{{ _site_url }}{{ theme:js src="main.{{ if assets_version }}{{ assets_version }}{{ else }}1{{ endif }}.js" }}"></script>
+	{{ endif }}
+	
+	{{# Body assets are page- or post-specific scripts. #}}
+	{{ _page_body_scripts }}
+		<script src="{{ name }}"></script>
+	{{ /_page_body_scripts }}
+</body>
+</html>
+<?php endif; ?>
