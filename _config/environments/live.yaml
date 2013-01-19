@@ -1,0 +1,12 @@
+###########################################################################################
+#
+#  LIVE ENVIRONMENT VARIABLES
+#
+###########################################################################################
+
+
+_site_domain: www.mikeyclarke.me
+
+enable_analytics: yes
+minify_assets: yes
+seo_visible: yes

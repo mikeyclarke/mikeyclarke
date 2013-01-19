@@ -1,0 +1,14 @@
+###########################################################################################
+#
+#  DEV ENVIRONMENT VARIABLES
+#
+###########################################################################################
+
+
+_site_url: http://www.mikeyclarke.dev
+_site_domain: www.mikeyclarke.dev
+_debug: true
+
+enable_analytics: no
+minfy_assets: no
+seo_visible: no
