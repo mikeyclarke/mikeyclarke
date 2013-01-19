@@ -1,0 +1,14 @@
+###########################################################################################
+#
+#  DEV ENVIRONMENT VARIABLES
+#
+###########################################################################################
+
+
+_site_url: http://stage.mikeyclarke.me
+_site_domain: stage.mikeyclarke.me
+_debug: true
+
+enable_analytics: no
+minfy_assets: yes
+seo_visible: no

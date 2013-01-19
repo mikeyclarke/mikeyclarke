@@ -2,9 +2,12 @@
 _cache/*
 .htaccess
 _config/users/admin.yaml
-_config/add-ons/*
-_config/environments/*
-_add-ons/*
+html/.htaccess
+html/_cache
+*.esproj
+*.espressostorage
+mikeyclarke.esproj/user.mikey.espressostorage
+mikeyclarke.esproj/Project.espressostorage
 
 
 # -------------
