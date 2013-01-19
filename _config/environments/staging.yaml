@@ -10,5 +10,5 @@ _site_domain: stage.mikeyclarke.me
 _debug: true
 
 enable_analytics: no
-minfy_assets: yes
+minify_assets: yes
 seo_visible: no
