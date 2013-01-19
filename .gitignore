@@ -3,6 +3,7 @@ _cache/*
 .htaccess
 _config/users/admin.yaml
 html/.htaccess
+html/robots.txt
 html/_cache
 *.esproj
 *.espressostorage
