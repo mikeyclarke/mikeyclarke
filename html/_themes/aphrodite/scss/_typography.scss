@@ -1,6 +1,6 @@
 // TYPEOGRAPY --------------------------------------------------------*
 
-$bodyTypeface:				"FS Me Web Regular", serif;
+$bodyTypeface:				"FS Me Web Regular", "Lucida Grande", serif;
 $bodyHeadingTypeface:		"Skolar SemiBold", sans-serif;
 $bodyHeadingWeight:			normal;
 $bannerHeadingTypeface:		"AvenirNext", Avenir, "HelveticaNeue", Arial, Helvetica, sans-serif;
@@ -27,17 +27,17 @@ body {
 			font-size: 1.35em;
 		}
 		@media only screen and (min-width: 50.625em) {
-			font-size: 1.5em;
+			font-size: 1.25em;
 		}
 		@media only screen and (min-width: 80.3125em) {
-			font-size: 1.65em;
+			font-size: 1.5em;
 		}
 	}
 	@else {
 		font-size: 1.5em;
 	}
 	
-	line-height: 165%;
+	line-height: 185%;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -82,6 +82,19 @@ a:visited {
 		font-size: 2em;
 		line-height: 150%;
 	}
+}
+
+[role~=main] {
+	h3 {
+		margin-bottom: .5em;
+	}
+	p {
+		margin-bottom: 2em;
+	}
+}
+
+.meta-permalink {
+	@include contain-urls();
 }
 
 [role=contentinfo] {

@@ -6,7 +6,7 @@ main_classes:
 ---
 ### CMS
 
-Wordpress is great, but I quickly grow tired o<span class="forty-fifth">f</span> having to undo it's defaults<span class="seventy-fifth">;</span> `<br>` tags, title attributes on everything in sight, empty `<p>` elements and the like are annoyances I could do without. This site instead uses [Statamic](http://statamic.com) a beautiful flat file CMS that I can't recommend enough. The only real limitation of this approach that I've found so far is the lack of a native search functionality. I'm loath to farm out the search experience to a company that will wrap it in ads; thus, I'm hoping for a search add-on in Statamic's soon-to-launch add-on marketplace. Otherwise, Statamic is simply a dream to use. I'm sure I'll write more about it in the future.
+Wordpress is great, but I quickly grow tired o<span class="forty-fifth">f</span> having to undo it's defaults<span class="seventy-fifth">;</span> `<br>` tags, title attributes on everything in sight, empty `<p>` elements and the like are annoyances I could do without. This site instead uses [Statamic](http://statamic.com), a beautiful flat file CMS that I can't recommend enough. The only real limitation of this approach that I've found so far is the lack of a native search functionality. I'm loath to farm out the search experience to a company that will wrap it in ads; thus, I'm hoping for a search add-on in Statamic's soon-to-launch add-on marketplace. Otherwise, Statamic is simply a dream to use. I'm sure I'll write more about it in the future.
 
 ### SASS
 
@@ -14,7 +14,7 @@ Wordpress is great, but I quickly grow tired o<span class="forty-fifth">f</span>
 
 ### Styling for one, styling for all
 
-My role is to put the users needs’ above my own. As such, I've never been a fan of excluding any user unless I absolutely have to; that includes users of legacy browsers like Internet Explorer. Thus, reaching the holy grail of progressive enhancement, creating an experience that's as beautiful and intuitive as possible in every browser, has been something of an obsession of mine. By switching to SASS, I think I've gotten pretty close.
+My role is to put the users’ needs above my own. As such, I've never been a fan of excluding any user unless I absolutely have to; that includes users of legacy browsers like Internet Explorer. Thus, reaching the holy grail of progressive enhancement, creating an experience that's as beautiful and intuitive as possible in every browser, has been something of an obsession of mine. By switching to SASS, I think I've gotten pretty close.
 
 This workflow borrows from the fantastic writing of a great many people, especially Aaron Gustafson whose book <cite>[Adaptive Web Design](http://readmill.com/books/adaptive-web-design-crafting-rich-experiences-with-progressive-enhancement)</cite> should have a place in every developer's library. The SASS directory of this site contains eight stylesheets, _typography.scss, _layout.scss, _color.scss, _behaviour.scss, six.scss, seven-eight.scss, nine.scss, and neue.scss; of those, the first four are import-only, and the latter four are compiled into CSS stylesheets to be served to browsers. As you may have guessed, the numbered stylesheets reference the versions of IE to which they are served, with neue.scss being served to IE 10 and all other browsers.
 
