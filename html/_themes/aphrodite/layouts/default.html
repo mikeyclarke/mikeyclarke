@@ -84,9 +84,13 @@
 
 </head>
 
-<body {{ if is_dev }} class="development" {{ endif }} >
+<body class="{{ if segment_2 }}article{{ else }}page{{ endif }}{{ if is_dev }} development{{ endif }}">
 	<div class="container">
-	{{ theme:partial src="header" }}
+	{{ if segment_2 }}
+		{{ theme:partial src="article-header" }}
+	{{ else }}
+		{{ theme:partial src="header" }}
+	{{ endif }}
 	{{ theme:partial src="navigation" }}
   
   	<div role="main{{ if _fieldset == post }} article{{ endif }}"{{ if main_classes }} class="{{ main_classes }}{{ name }} {{ /main_classes }}"{{ endif }}>
@@ -116,11 +120,7 @@
 	</script>
 	{{ endif }}
 	
-	{{ if minify_assets }}
 	<script src="{{ _site_url }}{{ theme:js src="main-min.{{ if assets_version }}{{ assets_version }}{{ else }}1{{ endif }}.js" }}"></script>
-	{{ else }}
-	<script src="{{ _site_url }}{{ theme:js src="main.{{ if assets_version }}{{ assets_version }}{{ else }}1{{ endif }}.js" }}"></script>
-	{{ endif }}
 	
 	{{# Body assets are page- or post-specific scripts. #}}
 	{{ _page_body_scripts }}

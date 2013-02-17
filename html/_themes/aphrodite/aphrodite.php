@@ -9,8 +9,13 @@ header('Cache-Control: no-transform');
 // If $desktop is true the <meta> viewport is set to a desktop width, else: device width.
 $desktop = false;
 
-if (isset($_GET['desktop'])) {
+if (isset($_GET['desktop']) || isset($_COOKIE['viewport'])) {
 	$desktop = true;
+}
+
+if ($desktop && !isset($_COOKIE['viewport'])) {
+	// Set a session cookie.
+	setcookie('viewport', 'desktop');
 }
 
 // This allows us to return just the content for use with the History API.

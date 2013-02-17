@@ -1,0 +1,48 @@
+(function preferences() {
+	
+	var methods = {
+	
+		render: function () {
+			
+			var that = this,
+				preferencesEl = document.getElementById('preferences'),
+				preferencesAnchor = '<a href="#preferences-pane">Settings</a>',
+				preferencesHTML = '<div role="menu" id="preferences"><fieldset class="preferences-text-size"><legend>Text size</legend><label for="text-size-smaller">Smaller</label><input type="radio" name="text-size" id="text-size-smaller" value="smaller"><label for="text-size-normal">Normal</label><input type="radio" name="text-size" id="text-size-normal" value="normal" checked><label for="text-size-bigger">Bigger</label><input type="radio" name="text-size" id="text-size-bigger" value="bigger"></fieldset><fieldset class="preferences-line-length"><legend>Line length</legend><label for="line-length-thinner">Thinner</label><input type="radio" name="line-length" id="line-length-thinner" value="thinner"><label for="line-length-normal">Normal</label><input type="radio" name="line-length" id="line-length-normal" value="normal" checked><label for="line-length-wider">Wider</label><input type="radio" name="line-length" id="line-length-wider" value="wider"></fieldset><fieldset class="preferences-desktop-view"><label for="desktop-view">Desktop view</label><input type="checkbox" id="desktop-view"></fieldset><fieldset class="preferences-remember-preferences"><legend>Remember preferences</legend><label for="remember-preferences-for-now">For now</label><input type="radio" name="remember-preferences" id="remember-preferences-for-now" value="for now" checked><label for="remember-preferences-forever">Forever</label><input type="radio" name="remember-preferences" id="remember-preferences-forever" value="forever"></fieldset><input type="reset" name="restore-defaults" value="Restore defaults"></div>';
+			
+			if (typeof preferencesEl === 'object') {
+				
+				preferencesEl.innerHTML = preferencesAnchor + preferencesHTML;
+				
+				that.setUpEvents();
+			}
+		},
+		
+		setUpEvents: function () {
+		
+			var that = this;
+		},
+		
+		changeTextSize: function () {
+			
+			var that = this;
+		},
+		
+		changeTextWidth: function () {
+			
+			var that = this;
+		},
+		
+		changeViewport: function () {
+			
+			var that = this;
+		},
+		
+		changeStorageDuration: function () {
+			
+			var that = this;
+		}
+	};
+	
+	methods.render();
+	
+}());

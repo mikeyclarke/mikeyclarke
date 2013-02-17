@@ -1,9 +1,8 @@
 // TYPEOGRAPY --------------------------------------------------------*
 
 $bodyTypeface:				"FS Me Web Regular", "Lucida Grande", serif;
-$bodyHeadingTypeface:		"Skolar SemiBold", sans-serif;
-$bodyHeadingWeight:			normal;
-$bannerHeadingTypeface:		"AvenirNext", Avenir, "HelveticaNeue", Arial, Helvetica, sans-serif;
+$bodyHeadingTypeface:		"Avenir Next", Avenir, "HelveticaNeue", Arial, Helvetica, sans-serif; //"Skolar SemiBold", sans-serif;
+$bodyHeadingWeight:			700;
 $bannerSubheadingTypeface:	"Skolar Regular", serif;
 
 
@@ -26,18 +25,18 @@ body {
 		@media only screen and (min-width: 37.5em) {
 			font-size: 1.35em;
 		}
-		@media only screen and (min-width: 50.625em) {
-			font-size: 1.5em;
-		}
-		@media only screen and (min-width: 80.3125em) {
-			font-size: 1.65em;
-		}
+		//@media only screen and (min-width: 50.625em) {
+		//	font-size: 1.5em;
+		//}
+		//@media only screen and (min-width: 80.3125em) {
+		//	font-size: 1.65em;
+		//}
 	}
 	@else {
 		font-size: 1.5em;
 	}
 	
-	line-height: 185%;
+	line-height: 175%;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -71,12 +70,11 @@ a:visited {
 }
 
 [role=banner] {
-	overflow: auto;
+	text-transform: lowercase;
 	h1 {
-		font-family: $bannerHeadingTypeface;
+		font-family: $bodyTypeface;
 		font-weight: 300;
 		font-size: 1em;
-		text-transform: lowercase;
 	}
 	h2 {
 		font-size: 2em;
@@ -85,11 +83,26 @@ a:visited {
 }
 
 [role~=main] {
+	h2 {
+		@if $mediaqueries {
+			font-size: 2.5em;
+			@media only screen and (min-width: 32.25em) {
+				font-size: 4em;
+			}
+		}
+		@else {
+			font-size: 4em;
+		}
+	}
 	h3 {
 		margin-bottom: .5em;
 	}
 	p {
 		margin-bottom: 2em;
+		&:nth-of-type(2) {
+			font-size: 1.5em;
+			line-height: 1.5em;
+		}
 	}
 }
 

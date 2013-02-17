@@ -1,11 +1,9 @@
-$bodyBackground: 	#fbfbfb;
-$bodyColor: 		rgb(76, 76, 76);
+$bodyBackground: 	#fff;
+$bodyColor: 		#333;
 
 $headingColor: 		#444;
 
-$primaryColor: 		#d43d64;
-$linkFocus:			saturate($primaryColor, 25%);
-$visitedLink:		lighten($primaryColor, 15%);
+$headerColor:		#777;
 
 
 body {
@@ -22,13 +20,9 @@ h6 {
 	color: $headingColor;
 }
 
-a {
-	color: $primaryColor;
-	&:focus,
-	&:hover {
-		color: $linkFocus;
-	}
-	&:visited {
-		color: $visitedLink;
+[role=banner] {
+	color: $headerColor;
+	a {
+		color: $headerColor;
 	}
 }

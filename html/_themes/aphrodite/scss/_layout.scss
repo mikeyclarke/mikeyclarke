@@ -55,3 +55,22 @@
 		}
 	}
 }
+
+[role=banner] h1 {
+	text-align: center;
+}
+
+[href="#navigation"] {
+	display: block;
+	-webkit-transform: translateY(-2.45em);
+}
+
+[href="#preferences"] {
+	display: block;
+	float: right;
+	-webkit-transform: translateY(-4.3em);
+}
+
+[role=navigation] {
+	display: none;
+}
